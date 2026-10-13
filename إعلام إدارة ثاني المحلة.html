@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>إعلام إدارة ثاني المحلة الكبرى</title>
+<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#f5f9f8;--card:#fff;--text:#16302b;--muted:#5d726d;--brand:#0f766e;--brand2:#0b5c56;--line:#dbe7e4;--onbrand:#fff;
+box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#0e1816;--card:#16251f;--text:#e6f2ef;--muted:#9bb3ad;--brand:#2dd4bf;--brand2:#5eead4;--line:#27403a;--onbrand:#06201c;color-scheme:dark}}
+:root[data-theme="dark"]{--bg:#0e1816;--card:#16251f;--text:#e6f2ef;--muted:#9bb3ad;--brand:#2dd4bf;--brand2:#5eead4;--line:#27403a;--onbrand:#06201c;color-scheme:dark}
+html{scroll-padding-top:env(safe-area-inset-top,0px);scroll-behavior:smooth}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--text);font-family:'Cairo',Tahoma,Arial,sans-serif;line-height:1.8}
+.wrap{max-width:1000px;margin:0 auto;padding:0 16px}
+header{background:var(--card);border-bottom:1px solid var(--line);position:sticky;top:env(safe-area-inset-top,0px);z-index:5}
+nav{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:10px 0}
+.logo{font-weight:700;font-size:1.05rem;color:var(--brand)}
+nav a{color:var(--text);text-decoration:none;margin-inline-start:16px;font-weight:600}
+nav a:hover{color:var(--brand)}
+.hero{padding:48px 0 36px;text-align:center}
+.hero h1{margin:0 0 8px;font-size:clamp(1.6rem,5vw,2.4rem);color:var(--brand)}
+.hero p{color:var(--muted);max-width:620px;margin:0 auto 20px}
+.btn{display:inline-block;background:var(--brand);color:var(--onbrand);border:0;border-radius:10px;padding:10px 22px;font:inherit;font-weight:700;cursor:pointer;text-decoration:none}
+.btn:hover{background:var(--brand2)}
+h2{font-size:1.5rem;margin:36px 0 14px}
+.tools{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:16px}
+input,textarea,select{font:inherit;background:var(--card);color:var(--text);border:1px solid var(--line);border-radius:10px;padding:10px 12px;width:100%}
+.tools input{flex:1;min-width:200px;width:auto}
+.chips{display:flex;gap:8px;flex-wrap:wrap}
+.chip{background:var(--card);color:var(--text);border:1px solid var(--line);border-radius:999px;padding:4px 14px;font:inherit;cursor:pointer}
+.chip.on{background:var(--brand);color:var(--onbrand);border-color:var(--brand)}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(270px,1fr));gap:16px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:18px;display:flex;flex-direction:column;gap:8px}
+.tag{font-size:.8rem;color:var(--brand);font-weight:700}
+.card h3{margin:0;font-size:1.1rem}
+.card p{margin:0;color:var(--muted);font-size:.95rem}
+.card .more{margin-top:auto;align-self:flex-start;background:none;border:0;color:var(--brand);font:inherit;font-weight:700;cursor:pointer;padding:0}
+dialog{border:1px solid var(--line);border-radius:14px;background:var(--card);color:var(--text);max-width:640px;width:calc(100% - 32px);padding:22px}
+dialog::backdrop{background:rgba(0,0,0,.5)}
+dialog h3{margin-top:0;color:var(--brand)}
+dialog ul{padding-inline-start:20px}
+.note{font-size:.85rem;color:var(--muted);border-top:1px solid var(--line);padding-top:10px;margin-top:14px}
+.contact{display:grid;grid-template-columns:1fr 1fr;gap:20px}
+@media(max-width:700px){.contact{grid-template-columns:1fr}nav a{margin-inline-start:10px;font-size:.9rem}}
+form{display:grid;gap:10px}
+.info div{margin-bottom:10px}
+footer{margin-top:48px;padding:20px 0;text-align:center;color:var(--muted);border-top:1px solid var(--line);font-size:.9rem}
+.empty{color:var(--muted);padding:20px 0}
+</style>
+</head>
+<body>
+<header><div class="wrap"><nav>
+<div class="logo">🩺 إعلام إدارة ثاني المحلة</div>
+<div><a href="#articles">المقالات</a><a href="#contact">تواصل معنا</a></div>
+</nav></div></header>
+
+<main class="wrap">
+<section class="hero">
+<h1>إعلام إدارة ثاني المحلة الكبرى</h1>
+<p>مقالات طبية مبسطة ونصائح وقائية لصحتك وصحة أسرتك، وقناة مباشرة للتواصل مع فريق الإعلام.</p>
+<a class="btn" href="#articles">اقرأ المقالات</a>
+</section>
+
+<section id="articles">
+<h2>المقالات الطبية</h2>
+<div class="tools">
+<input id="q" type="search" placeholder="ابحث في المقالات…">
+</div>
+<div class="chips" id="chips" style="margin-bottom:16px"></div>
+<div class="grid" id="list"></div>
+</section>
+
+<section id="contact">
+<h2>تواصل معنا</h2>
+<div class="contact">
+<form id="f">
+<input id="n" placeholder="الاسم" required>
+<input id="p" placeholder="رقم الموبايل (اختياري)" inputmode="tel">
+<textarea id="m" rows="5" placeholder="رسالتك أو استفسارك" required></textarea>
+<button class="btn" type="submit">إرسال عبر واتساب</button>
+</form>
+<div class="info">
+<div>📍 إدارة ثاني المحلة الصحية – المحلة الكبرى، الغربية</div>
+<div>📞 <a id="tel" style="color:var(--brand)" href="#">01XXXXXXXXX</a></div>
+<div>✉️ <a id="mail" style="color:var(--brand)" href="#">example@email.com</a></div>
+<div>🕘 من السبت إلى الخميس، 9 ص – 2 م</div>
+</div>
+</div>
+</section>
+</main>
+
+<footer><div class="wrap">© 2026 إعلام إدارة ثاني المحلة — المحتوى للتوعية ولا يغني عن استشارة الطبيب.</div></footer>
+
+<dialog id="dlg"><div id="dbody"></div><div class="note">هذه المعلومات للتوعية العامة ولا تغني عن استشارة الطبيب.</div><p><button class="btn" onclick="dlg.close()">إغلاق</button></p></dialog>
+
+<script>
+/* ===== إعدادات التواصل: عدّلها ببياناتكم ===== */
+const CONTACT={whatsapp:"20100000000",phone:"01000000000",email:"example@email.com"};
+
+/* ===== المقالات: أضف مقالًا جديدًا بنسخ أي عنصر وتعديله ===== */
+const ARTICLES=[
+{t:"غسل اليدين: أبسط وسيلة للوقاية",c:"الوقاية",d:"2026-10-01",s:"غسل اليدين الصحيح يقلل انتقال العدوى بشكل كبير.",b:"<p>غسل اليدين من أهم الطرق لمنع انتشار الأمراض المعدية كالإسهال والنزلات المعوية والتنفسية.</p><ul><li>بلّل يديك بالماء النظيف وضع الصابون.</li><li>افرك الكفين وظهر اليدين وبين الأصابع والأظافر لمدة 20 ثانية على الأقل.</li><li>اشطف جيدًا وجفف بمنشفة نظيفة.</li></ul><p>اغسل يديك قبل الأكل وإعداد الطعام وبعد استخدام الحمام والعودة من الخارج.</p>"},
+{t:"ارتفاع ضغط الدم: القاتل الصامت",c:"أمراض مزمنة",d:"2026-09-24",s:"قد لا تظهر أعراض واضحة، لذا القياس الدوري مهم.",b:"<p>ارتفاع ضغط الدم قد لا يسبب أعراضًا لفترة طويلة، لكنه يزيد خطر الجلطات وأمراض القلب والكلى.</p><ul><li>قس ضغطك بانتظام خاصة بعد سن 40 أو مع وجود تاريخ عائلي.</li><li>قلل الملح والمخللات والأطعمة المصنعة.</li><li>مارس المشي نصف ساعة يوميًا معظم أيام الأسبوع.</li><li>التزم بالعلاج الذي يصفه الطبيب ولا توقفه من نفسك.</li></ul>"},
+{t:"مرض السكر: كيف تتعايش معه؟",c:"أمراض مزمنة",d:"2026-09-15",s:"المتابعة والتغذية والحركة هي أساس السيطرة على السكر.",b:"<p>يمكن السيطرة على السكري ومنع مضاعفاته بالمتابعة المنتظمة ونمط حياة صحي.</p><ul><li>قس السكر حسب توجيهات الطبيب.</li><li>قلل السكريات والنشويات المكررة وزد الخضروات والألياف.</li><li>اعتن بقدميك وافحصهما يوميًا بحثًا عن جروح.</li><li>راجع الطبيب فورًا عند العطش الشديد أو كثرة التبول أو فقدان الوزن غير المبرر.</li></ul>"},
+{t:"جدول التطعيمات الأساسية للأطفال",c:"الأمومة والطفولة",d:"2026-09-05",s:"التطعيم في مواعيده يحمي طفلك من أمراض خطيرة.",b:"<p>التطعيمات تحمي الأطفال من أمراض مثل شلل الأطفال والحصبة والدرن والسعال الديكي.</p><ul><li>احتفظ بكارت التطعيمات وراجع مواعيده.</li><li>تطعيمات الأطفال متاحة مجانًا بالوحدات والمراكز الصحية.</li><li>استشر الطبيب إذا كان الطفل مريضًا أو تأخر موعد جرعة.</li></ul><p>للتأكد من الجدول الحالي توجه لأقرب وحدة صحية.</p>"},
+{t:"الأنفلونزا الموسمية: وقاية وعلاج",c:"الوقاية",d:"2026-10-10",s:"مع بداية الشتاء، تعرف على طرق الوقاية والتعامل مع الأعراض.",b:"<p>تنتشر الأنفلونزا في الخريف والشتاء، وتشمل أعراضها الحرارة والسعال وآلام الجسم.</p><ul><li>اغسل يديك وغطِّ فمك عند السعال أو العطس.</li><li>ارتح واشرب سوائل كثيرة.</li><li>تجنب المضادات الحيوية دون وصفة فهي لا تعالج الفيروسات.</li><li>اطلب الرعاية الطبية عند صعوبة التنفس أو استمرار الحرارة العالية.</li></ul><p>الفئات الأكثر عرضة: كبار السن، الحوامل، الأطفال، أصحاب الأمراض المزمنة.</p>"}
+];
+
+const list=document.getElementById('list'),q=document.getElementById('q'),chips=document.getElementById('chips'),dlg=document.getElementById('dlg');
+let cat='الكل';
+const cats=['الكل',...new Set(ARTICLES.map(a=>a.c))];
+function render(){
+ const k=q.value.trim();
+ const r=ARTICLES.filter(a=>(cat==='الكل'||a.c===cat)&&(!k||(a.t+a.s).includes(k)));
+ list.innerHTML=r.length?r.map(a=>{const i=ARTICLES.indexOf(a);return `<article class="card"><span class="tag">${a.c}</span><h3>${a.t}</h3><p>${a.s}</p><small style="color:var(--muted)">${a.d}</small><button class="more" data-i="${i}">اقرأ المزيد ←</button></article>`}).join(''):'<div class="empty">لا توجد نتائج.</div>';
+}
+chips.innerHTML=cats.map(c=>`<button class="chip${c===cat?' on':''}" data-c="${c}">${c}</button>`).join('');
+chips.onclick=e=>{const c=e.target.dataset.c;if(!c)return;cat=c;[...chips.children].forEach(b=>b.classList.toggle('on',b.dataset.c===c));render()};
+q.oninput=render;
+list.onclick=e=>{const i=e.target.dataset.i;if(i==null)return;const a=ARTICLES[i];document.getElementById('dbody').innerHTML=`<h3>${a.t}</h3>${a.b}`;dlg.showModal()};
+render();
+
+document.getElementById('tel').href='tel:'+CONTACT.phone;document.getElementById('tel').textContent=CONTACT.phone;
+document.getElementById('mail').href='mailto:'+CONTACT.email;document.getElementById('mail').textContent=CONTACT.email;
+document.getElementById('f').onsubmit=e=>{e.preventDefault();
+ const t=`الاسم: ${n.value}\nالموبايل: ${p.value||'-'}\nالرسالة: ${m.value}`;
+ window.open('https://wa.me/'+CONTACT.whatsapp+'?text='+encodeURIComponent(t),'_blank');
+};
+</script>
+</body>
+</html>
